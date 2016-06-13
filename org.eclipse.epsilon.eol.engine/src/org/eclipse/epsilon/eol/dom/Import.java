@@ -122,4 +122,10 @@ public class Import extends AbstractModuleElement {
 		}
 	}
 	
+	@Override
+	public String rewrite(){
+		String toString ="";
+		toString += getText() + " "+ getFirstChild().rewrite()+";\n";
+		return toString;
+	}
 }

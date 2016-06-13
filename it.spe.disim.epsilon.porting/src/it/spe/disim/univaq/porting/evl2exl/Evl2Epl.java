@@ -8,6 +8,7 @@ import org.eclipse.epsilon.common.util.AstUtil;
 import org.eclipse.epsilon.eol.dom.BooleanLiteral;
 import org.eclipse.epsilon.eol.dom.ExecutableBlock;
 import org.eclipse.epsilon.eol.dom.IfStatement;
+import org.eclipse.epsilon.eol.dom.Import;
 import org.eclipse.epsilon.eol.dom.NameExpression;
 import org.eclipse.epsilon.eol.dom.PlusOperatorExpression;
 import org.eclipse.epsilon.eol.dom.PropertyCallExpression;
@@ -16,6 +17,7 @@ import org.eclipse.epsilon.eol.dom.Statement;
 import org.eclipse.epsilon.eol.dom.StatementBlock;
 import org.eclipse.epsilon.eol.dom.StringLiteral;
 import org.eclipse.epsilon.eol.dom.TypeExpression;
+import org.eclipse.epsilon.eol.parse.EolParser;
 import org.eclipse.epsilon.epl.dom.Pattern;
 import org.eclipse.epsilon.epl.dom.Role;
 import org.eclipse.epsilon.epl.parse.EplParser;
@@ -30,7 +32,12 @@ public class Evl2Epl extends Exl2Eyl {
 
 		AST eplAST = PortingUtil.createModuleAST(EplParser.EPLMODULE,
 				"EPLMODULE");
-
+		
+		for(AST im : AstUtil.getChildren(evlAST, EvlParser.IMPORT)){
+			Import imp = PortingUtil.createImportBlock(EolParser.IMPORT,"../evl/"+im.getFirstChild().getText());
+			eplAST.addChild(imp);
+		}
+		
 		for(AST context : AstUtil.getChildren(evlAST, EvlParser.CONTEXT)){
 			for(AST critique : AstUtil.getChildren(context, EvlParser.CRITIQUE)){
 				for(AST fix : AstUtil.getChildren(critique, EvlParser.FIX)){

@@ -2,7 +2,6 @@ package it.spe.disim.univaq.porting.util;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URI;
 import java.util.List;
 
 import org.antlr.runtime.CommonToken;
@@ -14,6 +13,7 @@ import org.eclipse.epsilon.eol.dom.AndOperatorExpression;
 import org.eclipse.epsilon.eol.dom.BooleanLiteral;
 import org.eclipse.epsilon.eol.dom.ExecutableBlock;
 import org.eclipse.epsilon.eol.dom.IfStatement;
+import org.eclipse.epsilon.eol.dom.Import;
 import org.eclipse.epsilon.eol.dom.NameExpression;
 import org.eclipse.epsilon.eol.dom.OperationCallExpression;
 import org.eclipse.epsilon.eol.dom.PlusOperatorExpression;
@@ -36,7 +36,8 @@ import org.eclipse.epsilon.ewl.parse.EwlParser;
 
 public class PortingUtil {
 
-	private static String basePath = "./src/";
+	//private static String basePath = "./src/";
+	private static String basePath = "../it.spe.disim.epsilon.antipattern_d-s/";
 	private static Boolean evlSolution = true;
 	private static Boolean evlDetection = true;
 	private static Boolean ewlSolution = true;
@@ -280,5 +281,12 @@ public class PortingUtil {
 		Role role = new Role();
 		role.setToken(createToken(type, text));
 		return role;
+	}
+
+	public static Import createImportBlock(int type, String text) {
+		Import imp = new Import();
+		imp.setToken(createToken(type, "import"));
+		imp.addChild(PortingUtil.createStringLiteral(text));
+		return imp;
 	}
 }

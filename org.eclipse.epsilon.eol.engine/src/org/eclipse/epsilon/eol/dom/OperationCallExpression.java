@@ -161,8 +161,6 @@ public class OperationCallExpression extends FeatureCallExpression {
 	
 	@Override
 	public String rewrite(){
-		System.out.println(this.toExtendedStringTree());
-		System.out.println(this.getText());
 		String toString = "";
 		if(this.getSecondChild() != null){
 			toString += getFirstChild().rewrite() +getText() + getSecondChild().rewrite();
