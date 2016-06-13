@@ -1,0 +1,26 @@
+//verifico se l'artifact rappresenta il componente passato per parametro
+operation Artifact hasRepresentationOf(classifier : Classifier) : Boolean {
+	for(manifestation in self.getManifestations()){
+		if(manifestation.getSuppliers()->exists(sup | sup == classifier)){
+			return true;
+		}
+	}
+	return false;
+}
+
+operation Artifact getDeploymentNode() : Node{
+	return Node.allInstances->selectOne(node : Node | 
+		node.getDeployments()->exists(deploy : Deployment | 
+			deploy.getDeployedArtifacts()->exists(artifact : Artifact | artifact == self)
+		)
+	);
+}
+
+operation Artifact getManifestedComponents() : Sequence(Component){
+	self.getManifestations()->select(man : Manifestation | man.getUtilizedElement().isTypeOf(Component) );
+}
+
+
+operation Artifact getManifestedClassifier() : Sequence(Classifier){
+	self.getManifestations()->select(man : Manifestation | man.getUtilizedElement().isTypeOf(Classifier) );
+}
