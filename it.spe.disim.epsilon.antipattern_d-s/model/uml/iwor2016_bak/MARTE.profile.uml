@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MagicDrawProfile="http://www.omg.org/spec/UML/20131001/MagicDrawProfile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/UML/20131001/MagicDrawProfile UML_Standard_Profile.MagicDraw_Profile.profile.uml#_PIkUUiv0EeaDCdynFA1qYw">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MagicDrawProfile="http://www.omg.org/spec/UML/20131001/MagicDrawProfile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/UML/20131001/MagicDrawProfile UML_Standard_Profile.MagicDraw_Profile.profile.uml#_zqtuMjIsEeagfJvsBaC-YA">
   <uml:Profile xmi:id="_zaC5cAPHEdyeNfbOYuD9pg" name="MARTE" URI="" metamodelReference="_zaC5cAPHEdyeNfbOYuD9pg_packageImportcreatedOnLoad">
-    <eAnnotations xmi:id="_PIk97iv0EeaDCdynFA1qYw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-      <contents xmi:type="ecore:EPackage" xmi:id="_PIk97yv0EeaDCdynFA1qYw" name="MARTE" nsURI="http:///schemas/MARTE/_OWvOwCv0EeaDCdynFA1qYw/0" nsPrefix="MARTE">
-        <eSubpackages xmi:id="_PIk98Cv0EeaDCdynFA1qYw" name="MARTE_AnalysisModel" nsURI="http:///MARTE/MARTE_AnalysisModel.ecore" nsPrefix="MARTE.MARTE_AnalysisModel">
-          <eAnnotations xmi:id="_PIk98Sv0EeaDCdynFA1qYw" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_u8y4wAPMEdyuUt-4qHuVvQ"/>
+    <eAnnotations xmi:id="_zq1qATIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <contents xmi:type="ecore:EPackage" xmi:id="_zq1qAjIsEeagfJvsBaC-YA" name="MARTE" nsURI="http:///schemas/MARTE/_zGltcDIsEeagfJvsBaC-YA/0" nsPrefix="MARTE">
+        <eSubpackages xmi:id="_zq1qAzIsEeagfJvsBaC-YA" name="MARTE_AnalysisModel" nsURI="http:///MARTE/MARTE_AnalysisModel.ecore" nsPrefix="MARTE.MARTE_AnalysisModel">
+          <eAnnotations xmi:id="_zq1qBDIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_u8y4wAPMEdyuUt-4qHuVvQ"/>
         </eSubpackages>
-        <eSubpackages xmi:id="_PIk98iv0EeaDCdynFA1qYw" name="MARTE_Foundations" nsURI="http:///MARTE/MARTE_Foundations.ecore" nsPrefix="MARTE.MARTE_Foundations">
-          <eAnnotations xmi:id="_PIk98yv0EeaDCdynFA1qYw" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_jG1CQAPKEdy6wIwMc4WDOQ"/>
+        <eSubpackages xmi:id="_zq1qBTIsEeagfJvsBaC-YA" name="MARTE_Foundations" nsURI="http:///MARTE/MARTE_Foundations.ecore" nsPrefix="MARTE.MARTE_Foundations">
+          <eAnnotations xmi:id="_zq1qBjIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_jG1CQAPKEdy6wIwMc4WDOQ"/>
         </eSubpackages>
-        <eSubpackages xmi:id="_PIk99Cv0EeaDCdynFA1qYw" name="MARTE_Annexes" nsURI="http:///MARTE/MARTE_Annexes.ecore" nsPrefix="MARTE.MARTE_Annexes">
-          <eAnnotations xmi:id="_PIk99Sv0EeaDCdynFA1qYw" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_9ZhBAAPMEdyuUt-4qHuVvQ"/>
+        <eSubpackages xmi:id="_zq1qBzIsEeagfJvsBaC-YA" name="MARTE_Annexes" nsURI="http:///MARTE/MARTE_Annexes.ecore" nsPrefix="MARTE.MARTE_Annexes">
+          <eAnnotations xmi:id="_zq1qCDIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_9ZhBAAPMEdyuUt-4qHuVvQ"/>
         </eSubpackages>
-        <eSubpackages xmi:id="_PIk99iv0EeaDCdynFA1qYw" name="MARTE_DesignModel" nsURI="http:///MARTE/MARTE_DesignModel.ecore" nsPrefix="MARTE.MARTE_DesignModel">
-          <eAnnotations xmi:id="_PIk99yv0EeaDCdynFA1qYw" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_tADfQAPMEdyuUt-4qHuVvQ"/>
+        <eSubpackages xmi:id="_zq1qCTIsEeagfJvsBaC-YA" name="MARTE_DesignModel" nsURI="http:///MARTE/MARTE_DesignModel.ecore" nsPrefix="MARTE.MARTE_DesignModel">
+          <eAnnotations xmi:id="_zq1qCjIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_tADfQAPMEdyuUt-4qHuVvQ"/>
         </eSubpackages>
       </contents>
     </eAnnotations>
@@ -136,28 +136,28 @@
       <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Association"/>
     </elementImport>
     <packageImport xmi:id="_xrCkwA9eEdy-lroUn0KWEw">
-      <importedPackage href="iwor2016_ase.uml#_uBlQkA73EdyML4mHwjNDrw"/>
+      <importedPackage href="iwor2016_ase_example.uml#_uBlQkA73EdyML4mHwjNDrw"/>
     </packageImport>
     <packageImport xmi:id="_xrCkwQ9eEdy-lroUn0KWEw">
-      <importedPackage href="iwor2016_ase.uml#_dDxjEAeNEdytasR0-Ec7ew"/>
+      <importedPackage href="iwor2016_ase_example.uml#_dDxjEAeNEdytasR0-Ec7ew"/>
     </packageImport>
     <packageImport xmi:id="_xrMVwA9eEdy-lroUn0KWEw">
-      <importedPackage href="iwor2016_ase.uml#_3DJKAA4uEdysTsAUPnp57Q"/>
+      <importedPackage href="iwor2016_ase_example.uml#_3DJKAA4uEdysTsAUPnp57Q"/>
     </packageImport>
     <packageImport xmi:id="_xrMVwQ9eEdy-lroUn0KWEw">
-      <importedPackage href="iwor2016_ase.uml#_X3JtMAeNEdytasR0-Ec7ew"/>
+      <importedPackage href="iwor2016_ase_example.uml#_X3JtMAeNEdytasR0-Ec7ew"/>
     </packageImport>
     <packageImport xmi:id="_xrMVwg9eEdy-lroUn0KWEw">
-      <importedPackage href="iwor2016_ase.uml#_g2qR8A74EdyML4mHwjNDrw"/>
+      <importedPackage href="iwor2016_ase_example.uml#_g2qR8A74EdyML4mHwjNDrw"/>
     </packageImport>
     <packageImport xmi:id="_xrVfsA9eEdy-lroUn0KWEw">
-      <importedPackage href="iwor2016_ase.uml#_l6ms8A74EdyML4mHwjNDrw"/>
+      <importedPackage href="iwor2016_ase_example.uml#_l6ms8A74EdyML4mHwjNDrw"/>
     </packageImport>
     <packageImport xmi:id="_xrVfsQ9eEdy-lroUn0KWEw">
-      <importedPackage href="iwor2016_ase.uml#_x9l9sA74EdyML4mHwjNDrw"/>
+      <importedPackage href="iwor2016_ase_example.uml#_x9l9sA74EdyML4mHwjNDrw"/>
     </packageImport>
     <packageImport xmi:id="_xrVfsg9eEdy-lroUn0KWEw">
-      <importedPackage href="iwor2016_ase.uml#_2GPOEA74EdyML4mHwjNDrw"/>
+      <importedPackage href="iwor2016_ase_example.uml#_2GPOEA74EdyML4mHwjNDrw"/>
     </packageImport>
     <packageImport xmi:id="_zaC5cAPHEdyeNfbOYuD9pg_packageImportcreatedOnLoad">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
@@ -175,11 +175,11 @@
     <packagedElement xmi:type="uml:Dependency" xmi:id="_y9JiUA9dEdy-lroUn0KWEw" name="FromMARTE design modeltoMARTE foundations" client="_tADfQAPMEdyuUt-4qHuVvQ" supplier="_jG1CQAPKEdy6wIwMc4WDOQ"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_tADfQAPMEdyuUt-4qHuVvQ" clientDependency="_y9JiUA9dEdy-lroUn0KWEw" name="MARTE_DesignModel" URI=""/>
     <profileApplication xmi:id="_be00301_1073394351331_445580_2profileApplicationMARTE">
-      <eAnnotations xmi:id="_PLa0Aiv0EeaDCdynFA1qYw" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="UML_Standard_Profile.MagicDraw_Profile.profile.uml#_PIkUUiv0EeaDCdynFA1qYw"/>
+      <eAnnotations xmi:id="_zteuUjIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="UML_Standard_Profile.MagicDraw_Profile.profile.uml#_zqtuMjIsEeagfJvsBaC-YA"/>
       </eAnnotations>
       <appliedProfile href="UML_Standard_Profile.MagicDraw_Profile.profile.uml#_be00301_1073394351331_445580_2"/>
     </profileApplication>
   </uml:Profile>
-  <MagicDrawProfile:auxiliaryResource xmi:id="_PLbbECv0EeaDCdynFA1qYw" base_Element="_zaC5cAPHEdyeNfbOYuD9pg" base_Package="_zaC5cAPHEdyeNfbOYuD9pg"/>
+  <MagicDrawProfile:auxiliaryResource xmi:id="_zteuUzIsEeagfJvsBaC-YA" base_Element="_zaC5cAPHEdyeNfbOYuD9pg" base_Package="_zaC5cAPHEdyeNfbOYuD9pg"/>
 </xmi:XMI>

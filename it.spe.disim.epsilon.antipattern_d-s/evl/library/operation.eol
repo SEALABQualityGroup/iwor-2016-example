@@ -1,60 +1,11 @@
-operation Operation F_resDemandGreaterOrEqualThan( th_maxResDemand : List(Real) ) : Boolean{
-	
-	var turnback : Boolean = true;
-	
-	var appliedStereotypes = self.getAppliedStereotypes();
-	
-	var gaStep = self.getStereotype('GaStep');
-	var servCount = self.getValue(gaStep, 'servCount');
-	
-	var i : Integer = 0;
-	
-	for(demand in servCount){
-		if(demand.asReal() < th_maxResDemand.at(i).asReal() ){ //al primo demand non > della soglia relativa ritorna false
-			turnback = false;
-			break;
-		}
-		i = i+1;
-	}
-	
-	return turnback;	
-}
-
-operation Operation F_resDemandLesserThan( th_minResDemand : List(Real) ) : Boolean{
-
-	var turnback : Boolean = true;
-	
-	var appliedStereotypes = self.getAppliedStereotypes();
-	
-	var gaStep = self.getStereotype('GaStep');
-	var servCount = self.getValue(gaStep, 'servCount');
-	
-	var i : Integer = 0;
-
-	for(demand in servCount){
-		if(demand.asReal() >= th_minResDemand.at(i) ){ //al primo demand non > della soglia relativa ritorna false
-			turnback = false;
-			break;
-		}
-		i = i+1;
-	}
-	return turnback;	
-}
-
-
 //clone una operation
 operation Operation cloneOperationInto(component : Component) : Operation{
 	var newOperation = new Operation;
 	newOperation.name = self.name + "_Cloned";
-	
 	component.ownedOperation.add(newOperation);
-	
 	newOperation.cloneOwnedParameterFrom(self);
-	
 	newOperation.cloneAppliedStereotypesFrom(self);
-	
 	newOperation.cloneReturnTypeFrom(self);
-	
 	return newOperation;
 }
 
@@ -375,26 +326,7 @@ operation Operation getOwnerInteractionOperands() : List(InteractionOperand){
 			returnValue.add(mes.getSendEvent().getOwner());
 		}
 	}
-	
 	return returnValue;
-}
-
-operation Operation splitting(numberOfSplitting : Integer, percentage : Integer) : Boolean{
-	var turnback : Boolean = false;
-	
-	var message = "fai la scelta: 0- splitto il componente con l'operazione critica; 1- splitto l'operazione critica";
-	var caseValue = UserInput.promptInteger(message, 0);
-	
-	switch (caseValue) {
-		case "1" : 
-			turnback = self.splittingOperation(numberOfSplitting, percentage);
-		case "2" : "2".println();
-		case "3" : "3".println(); 
-		default:
-			turnback = self.splittingComponent(numberOfSplitting, percentage);
-	}
-	
-	return turnback;
 }
 
 operation Operation splittingComponent( numberOfSplitting : Integer, percentage : Integer ) : Boolean {	
@@ -773,3 +705,55 @@ operation Operation decomposition(){
 		return 0;
 	}
 }
+
+
+operation getOperationWithResDemanLesser(th_minResDemand : List(Real)) : List(Operation){
+	var opLesser : List(Operation) = new List(Operation);
+	var isMin : Boolean = true; 
+	
+	for(op in Operation.allInstances){
+		if(op.hasStereotype("GaStep")){
+			var gaStep = op.getStereotype("GaStep");
+			var i : Integer = 0;
+			for(resDem in op.getValue(gaStep, "servCount")){
+				if(not (resDem.asReal() < th_minResDemand[i].asReal())){
+					isMin = false;
+				}
+				i = i+1;
+			}
+			if(isMin){
+				opLesser.add(op);
+			}
+		}	
+		isMin=true;
+	}
+	
+	if(opLesser.isUndefined() or opLesser.isEmpty()){
+		return null;
+	}else{
+		return opLesser;
+	}
+}
+
+/****************************************************
+ * 				OLD OPERATION						*
+ ****************************************************
+ 
+operation Operation splitting(numberOfSplitting : Integer, percentage : Integer) : Boolean{
+	var turnback : Boolean = false;
+	
+	var message = "fai la scelta: 0- splitto il componente con l'operazione critica; 1- splitto l'operazione critica";
+	var caseValue = UserInput.promptInteger(message, 0);
+	
+	switch (caseValue) {
+		case "1" : 
+			turnback = self.splittingOperation(numberOfSplitting, percentage);
+		case "2" : "2".println();
+		case "3" : "3".println(); 
+		default:
+			turnback = self.splittingComponent(numberOfSplitting, percentage);
+	}
+	
+	return turnback;
+}
+*/

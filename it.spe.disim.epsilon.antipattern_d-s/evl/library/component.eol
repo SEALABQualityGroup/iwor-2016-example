@@ -1,11 +1,9 @@
-	//clone le operazioni del componente componente
 operation Component cloneOwnedOperationFrom(componentSource : Component){
 	for(op in componentSource.ownedOperation){
 		op.cloneOperationInto(self);
 	}
 }
 
-//aggiungo una nuova operazione al componente
 operation Component moveOperation( op : Operation ) : Boolean{
 	if(self.ownedOperation.add(op)){
 		return true;
@@ -13,28 +11,24 @@ operation Component moveOperation( op : Operation ) : Boolean{
 	return false;
 }
 
-//clone le interface realization del componente
 operation Component cloneInterfaceRealizationFrom(component : Component) {
 	for(realization in component.interfaceRealization){
 		self.interfaceRealization.add(realization.cloneInterfaceRealization());
 	}
 }
 
-//clone le provideds inteface
 operation Component cloneProvidedsFrom(component : Component){
 	for(providedInterface in component.getProvideds()){
 		self.getProvideds().add(providedInterface);
 	}
 }
 
-//clone le requireds interface
 operation Component cloneRequiredsFrom(component : Component ){
 	for(requiredInterface in component.getRequireds()){
 		self.getRequireds().add(requiredInterface);
 	}
 }
 
-//recupero le lifeline del component
 operation Component getLifelines() : List(Lifeline){
 	var returnValue : List(Lifeline) = new List (Lifeline);
 	for(lifeline in Lifeline.allInstances){
@@ -45,7 +39,6 @@ operation Component getLifelines() : List(Lifeline){
 	return returnValue;
 }
 
-//sposto le provided interfaces sul componente
 operation Component moveInterfaceRealizations(interfaceRealization : InterfaceRealization){
 	self.interfaceRealization.add(interfaceRealization);
 }
@@ -235,26 +228,17 @@ operation Component getNearLessUsedNodes() : List(Node){
 	return listOfNearLessUsed;
 }
 
-/***********************
-
-	IT MUST BE CHECKED	
-
-************************/
-//FIXME Check the behavior
 operation Component deployOn(node : Node){
-	var newArtifact : Artifact = new Artifact; //creo l'artefatto
-	var newManifestation; //e' la manifestazione del componente
-	var newDeployment; //e' il deployment dell artefatto appena creato
+	var newArtifact : Artifact = new Artifact;
+	var newManifestation; 
+	var newDeployment; 
 	
-	//aggiungo l'artefatto al package del nodo
 	node.getNearestPackage().addElement(newArtifact); 
-	//setto il nome dell'artefatto come il componente
 	newArtifact.name = self.name; 
 	
-	//creo la manifestazione del componente sull artefatto
 	newManifestation = newArtifact.createManifestation(self.name, self); 
-	newDeployment = node.createDeployment(newArtifact.name); //creo il deploy sul nodo
-	newDeployment.getDeployedArtifacts().add(newArtifact); //aggiungo al deploy l'artefatto
+	newDeployment = node.createDeployment(newArtifact.name); 
+	newDeployment.getDeployedArtifacts().add(newArtifact);
 }
 
 operation Component getNeighbours() : List(Node){
@@ -272,10 +256,8 @@ operation Component getNeighbours() : List(Node){
 operation Component redeployOn(node : Node, from : Node){
 	var artifact = self.getArtifactOn(from);
 	var deployment = self.getDeploymentOn(from, artifact);
-	node.getDeployments().add(deployment); //sposto l'artefatto dal nodo sorgente al nuovo nodo
+	node.getDeployments().add(deployment);
 }
-
-
 
 operation Component getArtifactOn(node : Node) : Artifact{
 	var deploymentNode: Node; 
@@ -289,13 +271,12 @@ operation Component getArtifactOn(node : Node) : Artifact{
 }
 
 operation Component calculateUtilization() : Sequence(Real){
-	var ownOperations = self.getOperations(); //recupero le operazioni proprie del componente
+	var ownOperations = self.getOperations();
 	var utilization : Sequence(Real) = new Sequence(Real);
-	
 	var computationUtilization : Real = 0.0;
 	var storageUtilization : Real = 0.0;
 	var bandwidthUtilization : Real = 0.0;
-	
+
 	for(op in ownOperations){
 		if(op.hasStereotype("GaStep") and op.getValue(op.getStereotype("GaStep"), "servCount").isDefined()){
 			var sCount = op.getValue(op.getStereotype("GaStep"), "servCount");
@@ -313,7 +294,6 @@ operation Component calculateUtilization() : Sequence(Real){
 	return utilization;
 }
 
-
 operation Component calculateTotalUtilization() : Real{
 	var totUtilization : Real = 0.0;
 	var i : Integer = 0;
@@ -328,9 +308,8 @@ operation Component addUsages(usages : Sequence(Usage)){
 	for(usage in usages){
 		if(usage.isTypeOf(InterfaceRealization)){
 			self.moveInterfaceRealizations(usage);
-		}else if(usage.isTypeOf(InterfaceRealization)){
-			//TODO
 		}
+		//else if(usage.isTypeOf(InterfaceRealization)){}
 	}
 }
 
@@ -345,10 +324,9 @@ operation Component getDeploymentOn(node : Node, art : Artifact) : Deployment{
 
 operation Component createLifelineInto(interaction : Interaction) : Lifeline {
 	var lifeline = interaction.createLifeline(self.name+"lifeline"); //L2
-	
 	var spProp = interaction.createOwnedAttribute(self.name, self);
+	
 	lifeline.setRepresents(spProp);
-		
 	return lifeline;
 }
 
@@ -377,14 +355,9 @@ operation Component getSendingMessages() : Integer{
 	}
 }
 
-/*
-	Ritorna una map<Lifeline, BES> contenente messaggi in uscita > della soglia
-*/
 operation Component getCriticalMessages4BlobControllerAP(th_maxMsgs : Integer) : Map {
 	var lifelines = self.getLifelines();
-	
 	var lfMap : Map(Lifeline, BehaviorExecutionSpecificaiton) = new Map(Lifeline, BehaviorExecutionSpecification);
-	
 	var count : Integer = 0;
 	
 	for(lf in lifelines){
@@ -392,7 +365,6 @@ operation Component getCriticalMessages4BlobControllerAP(th_maxMsgs : Integer) :
 		count = 0;
 		for(bes in beses){
 			var besOwner = bes.getOwner();
-			
 			var besStartIndex = besOwner.getIndexOf(bes.getStart()); //indice di inizio bes
 			var besFinishIndex = besOwner.getIndexOf(bes.getFinish()); //indice di fine bes
 			
@@ -407,13 +379,12 @@ operation Component getCriticalMessages4BlobControllerAP(th_maxMsgs : Integer) :
 					}
 					
 				}
-			}// end intFrag loop
-			
+			}
 			if(count > th_maxMsgs){
 				lfMap.put(lf, bes);
 			}
-		} //end bes loop
-	} //end lf loop
+		} 
+	} 
 	
 	return lfMap;
 }
@@ -427,9 +398,6 @@ operation Component getCriticalOperations4BlobControllerAP(th_maxMsgs : Integer)
 	return returnValue;
 }
 
-/*
-	If a component receives a lot of calls, it might be a Blob Container AP 
-*/
 operation Component getCriticalLifeline4BlobContainerAP(th_maxMsgs : Integer) : Sequence(Lifeline){
 	var returnValue : Sequence(Lifeline) = new Sequence(Lifeline);
 	var lifelines = self.getLifelines();
@@ -476,7 +444,6 @@ operation Component getNodesWithNetworkUsageLesserThan(th_minNetUtil : Real) : S
 	return returnValue;
 }
 
-//recupero la lista delle operazioni che hanno un resDemand >= della threshold
 operation Component getOperationsWithResDemandGreaterOrEqual(th_maxResDemand : List(Real) ) : List(Operation){
 	var listOfOperations = self.getOperations();
 	var returnValue : List(Operation) = new List(Operation);
@@ -492,7 +459,6 @@ operation Component getOperationsWithResDemandGreaterOrEqual(th_maxResDemand : L
 	return returnValue;
 }
 
-//recupero la lista delle operazioni che hanno un resDemand < della threshold
 operation Component getOperationsWithResDemandLesserThan(th_minResDemand : List(Real) ) : List(Operation){
 	var listOfOperations = self.getOperations();
 	var returnValue : List(Operation) = new List(Operation);
@@ -505,7 +471,6 @@ operation Component getOperationsWithResDemandLesserThan(th_minResDemand : List(
 	}
 	return returnValue;
 }
-
 
 operation Component getRequiredInterfaces() : Sequence(Interface){
 	return self.getRequireds().asSequence();
@@ -584,38 +549,30 @@ operation Component countRemoteInstances(th_maxRemInst : Integer) : Boolean{
 }
 
 operation Component applySessionFacade() : Boolean{
-	
-	var mapIntMes = self.getRemoteMesIntoInteractions(); //mapp di interaction e mes
+	var mapIntMes = self.getRemoteMesIntoInteractions();
 	var mapRemCompFacade : Map(Component, List(Component)) = new Map(Component, List(Component));
-	"**********APPLY SessionFacade****************".println();
+
 	for(int in mapIntMes.keySet()){
 		for(mes in mapIntMes.get(int)){
 			if(mes.hasStereotype("GaCommStep")){
-				var op = mes.getSignature(); //operazione remota
-				var comp = op.getClass_(); //componente remoto
-				if( mapRemCompFacade.keySet().isEmpty() or not mapRemCompFacade.containsKey(comp) ){ //verifico se il componente e' stato considerato
-					
+				var op = mes.getSignature(); 
+				var comp = op.getClass_(); 
+				if(mapRemCompFacade.keySet().isEmpty() or not mapRemCompFacade.containsKey(comp)){
 					var listOfComponent : Sequence(Component) = new Sequence(Component);
-					
-					var localFacade : Component = self.createNewComponent(); //creo il localfacade
-					localFacade.setName("LocalFacadeWith_"+comp.getName()); 
-					
+					var localFacade : Component = self.createNewComponent();
 					var remoteFacade : Component = comp.createNewComponent();
-					remoteFacade.setName("RemoteFacadeWith_"+self.getName());
-					
 					var opRemoteFacadeInterface : Interface = new Interface();
-					remoteFacade.getNearestPackage().addElement(opRemoteFacadeInterface);
 					
+					localFacade.setName("LocalFacadeWith_"+comp.getName()); 
+					remoteFacade.setName("RemoteFacadeWith_"+self.getName());
+					remoteFacade.getNearestPackage().addElement(opRemoteFacadeInterface);
 					remoteFacade.getProvideds().add(opRemoteFacadeInterface);
 					opRemoteFacadeInterface.setName("opFacade_Interface");
-					
 					localFacade.getRequireds().add(opRemoteFacadeInterface);
 					localFacade.getProvideds().add(opRemoteFacadeInterface);
-					
 					listOfComponent.add(localFacade);
 					listOfComponent.add(remoteFacade);
-					
-					//------------------DEPLOY-------------------------
+
 					for(node in self.getNodes()){
 						localFacade.deployOn(node);
 					}
@@ -630,85 +587,67 @@ operation Component applySessionFacade() : Boolean{
 					
 					mapRemCompFacade.put(comp, listOfComponent);
 				}
-					var localFacade = mapRemCompFacade.get(comp).first();
-					var remoteFacade = mapRemCompFacade.get(comp).second();
-					
-					var listOfUsedInterface = op.getUsedInterfaces(); //interfacce usate da op
+				var localFacade = mapRemCompFacade.get(comp).first();
+				var remoteFacade = mapRemCompFacade.get(comp).second();
+				
+				var listOfUsedInterface = op.getUsedInterfaces(); //interfacce usate da op
 
-					for(interface in listOfUsedInterface){
-						("interfaccia: "+interface).println();
-						//var newInterface : Interface = interface.cloneInterfaceRealization();
-						
-						localFacade.allRealizedInterfaces().add(interface);
-						remoteFacade.getAllUsedInterfaces().add(interface);
-					}
+				for(interface in listOfUsedInterface){
+					localFacade.allRealizedInterfaces().add(interface);
+					remoteFacade.getAllUsedInterfaces().add(interface);
+				}
 					
-				//----------------DYNAMIC---------------------------------
 				var localFacadeLf = mapRemCompFacade.get(comp).third();
 				var remoteFacadeLf = mapRemCompFacade.get(comp).fourth();
-				
 				var besLf : BehaviorExecutionSpecification = new BehaviorExecutionSpecification;
+				var messageEnd : ExecutionOccurrenceSpecification = new ExecutionOccurrenceSpecification;
+
 				int.getFragments().add(besLf);
 				besLf.setName("BesLifeline");
-				
-				var messageEnd : ExecutionOccurrenceSpecification = new ExecutionOccurrenceSpecification;
 				int.getFragments().add(messageEnd);
 				messageEnd.setName(mes.getName()+"_End");
 				
 				var mesSelf2Lf = int.createMessage(mes.getName());
-				
 				var sendMOS : MessageOccurrenceSpecification = new MessageOccurrenceSpecification;
 				var receiveMOS : MessageOccurrenceSpecification = new MessageOccurrenceSpecification;
+
 				int.getFragments().add(sendMOS);
 				int.getFragments().add(receiveMOS);
-				
 				mesSelf2Lf.setSendEvent(sendMOS);
 				mesSelf2Lf.setReceiveEvent(receiveMOS);
-				
 				besLf.start = mesSelf2Lf.getSendEvent();
 				besLf.finish = messageEnd;
-				
 				localFacadeLf.getCoveredBys().add(besLf);
 				localFacadeLf.getCoveredBys().add(mesSelf2Lf.getReceiveEvent());
-				
 				int.getComponentLifeline(self).getCoveredBys().add(mesSelf2Lf.getSendEvent());
-
 				remoteFacadeLf.getCoveredBys().add(mes.getSendEvent());
 				int.getComponentLifeline(self).removeInteractionFragment(mes.getSendEvent());
 			}
 		}
 	}	
-	
-	"**********APPLY SessionFacade****************".println();
 	return false;
 }
 
 operation Component addInterfaceRealization(int : InterfaceRealization) : Boolean {
-	
 	var selfPackage = self.getNearestPackage();
-	
 	var newInt : InterfaceRealization = int.cloneInterfaceRealization();
 	
 	selfPackage.addElement(newInt);
-	
 	if(self.getInterfaceRealization().add(newInt))
 		return true;
 	return false;
 } 
 
 operation Component createNewComponent() : Component{
-	
 	var selfPackage = self.getNearestPackage(); //recupero il package contenitore dell'operazione critica
-	
 	var component : Component = new Component; //creo il componente splittato
+
 	selfPackage.addElement(component); //aggiungo il componente splittato al package del componente sorgente
-	
 	return component;
 }
 
 
 operation Component applyStandardFormat() : Boolean{
-
 	var mostUsedFormat = self.getTheMostUsedFormat(); //mappa(interaction, map(formato, utilizzo))
 	
 	for(int in mostUsedFormat.keySet()){
@@ -722,27 +661,20 @@ operation Component applyStandardFormat() : Boolean{
 }
 
 operation Component getUsedFormat() : Any{
-	
 	var listOfInteraction = self.getInteractions();
-	
 	var mapFormatTypeUsage : Map(String, Integer) = new Map(String, Integer);
 	var mapUsedFormat : Map(Interaction, Map);
 	
 	for(int in listOfInteraction){
-		
 		var listOfMes = int.getMessageOf(self);
 		for(mes in listOfMes){
 			if(mes.hasStereotype("GaEventTrace") and mes.getValue(mes.getStereotype("GaEventTrace"), "format").isDefined() ){
 				if( mapFormatTypeUsage.isEmpty() or 
 						not mapFormatTypeUsage.containsKey(mes.getValue(mes.getStereotype("GaEventTrace"), "format"))){
-					mapFormatTypeUsage.put(mes.getValue(mes.getStereotype("GaEventTrace"), "format"), 1);
-					("formato: ".print()+mes.getValue(mes.getStereotype("GaEventTrace"), "format").print()+" utilizzato: 1".print()).println();
-					"".println();
+							mapFormatTypeUsage.put(mes.getValue(mes.getStereotype("GaEventTrace"), "format"), 1);
 				}
 				else if(mapFormatTypeUsage.containsKey(mes.getValue(mes.getStereotype("GaEventTrace"), "format"))){
 					var count = mapFormatTypeUsage.get(mes.getValue(mes.getStereotype("GaEventTrace"), "format")).asInteger() + 1;
-					("formato: ".print()+mes.getValue(mes.getStereotype("GaEventTrace"), "format").print()+" utilizzato: "+count.print()).println();
-					"".println();
 					mapFormatTypeUsage.put(mes.getValue(mes.getStereotype("GaEventTrace"), "format"), count);
 				}
 			}
@@ -753,25 +685,21 @@ operation Component getUsedFormat() : Any{
 	return mapUsedFormat;
 }
 
-
 operation Component getTheMostUsedFormat() : Any{
-	
 	var listOfInteraction = self.getInteractions();
-	
 	var mapMostUsedFormat : Map(Interaction, Map);
 	
 	for(int in self.getUsedFormat().keySet()){
 		mapMostUsedFormat.put(int, self.getUsedFormat().get(int).getMostUsed());
 	}
-
 	return mapMostUsedFormat;
 }
 
 operation Map getMostUsed() : Map {
-	
 	var max = 0;
 	var mapFormat : Map(String, Integer);
 	var maxFormat : String;
+
 	for(format in self.keySet()){
 		if(self.get(format).asInteger() > max){
 			max = self.get(format).asInteger();
@@ -782,9 +710,7 @@ operation Map getMostUsed() : Map {
 	return mapFormat;
 }
 
-/***************** BLOB CONTAINER ****************************/
 operation Component reduceNumberOfSupplierConnects() : Boolean{
-	
 	var listOfOperations = self.getOperations();
 	
 	while(self.getOperations().size() > th_maxConnects){
@@ -797,9 +723,8 @@ operation Component reduceNumberOfSupplierConnects() : Boolean{
 		}
 	}
 }
-/***************** BLOB CONTROLLER ****************************/
+
 operation Component reduceNumberOfClientConnects() : Boolean{
-	
 	var listOfUsedInterfaces = self.getRequireds();
 	
 	while(self.getRequireds().size > th_maxConnects){
@@ -821,10 +746,10 @@ operation Component createNewInterfaceRealization() :InterfaceRealization{
 
 operation Component createNewOperation(op : Operation) : Operation{
 	var newOperation = self.createOwnedOperation("operation_decomposition", null,null);
+	var interface_op_new = self.createInterfaceRealization("Interface_for_"+newOperation.getName(), null);
+	
 	newOperation.cloneAppliedStereotypesFrom(op);
 	newOperation.cloneReturnTypeFrom(op);
-	var interface_op_new = self.createInterfaceRealization("Interface_for_"+newOperation.getName(), null); 
-	
 	return newOperation;
 }
 

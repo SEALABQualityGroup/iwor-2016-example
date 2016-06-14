@@ -28,13 +28,13 @@ operation th_maxExF() : Integer{
 
 operation th_maxResDemand() : List(Real){
 	var th_maxResDemand : List( Real ) = new List( Real );
-	th_maxResDemand.add(20);
+	th_maxResDemand.add(20.0);
 	return th_maxResDemand;
 }	
 
 operation th_minResDemand() : List(Real){	
 	var th_minResDemand : List( Real ) = new List( Real );
-	th_minResDemand.add(10);
+	th_minResDemand.add(10.0);
 	return th_minResDemand;
 }
 

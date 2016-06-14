@@ -40,17 +40,23 @@ operation Operation F_probExec() : Boolean{
 }
 
 operation Component F_probExec() : Boolean {
-	var opGreater = self.getOperationsWithResDemandGreaterOrEqual(th_maxResDemand);
-	var opLesser = self.getOperationsWithResDemandLesserThan(th_minResDemand);
-	
+	var opGreater = self.getOperationsWithResDemandGreaterOrEqual(th_maxResDemand());
+	if(opGreater.isUndefined() or opGreater.isEmpty()){
+		return false;
+	}
+	var opLesser = getOperationWithResDemanLesser(th_minResDemand());
 	for (opG in opGreater){
 		var opGInteractionOperands = opG.getOwnerInteractionOperands();
 		for(opL in opLesser){
 			for(opLInteractionOperand in opL.getOwnerInteractionOperands()){
 				for(opGInteractionOperand in opGInteractionOperands){
-					if( (opGInteractionOperand.getValue(opGInteractionOperand.getStereotype("GaStep"), "prob").asReal() + 
-					opLInteractionOperand.getValue(opLInteractionOperand.getStereotype("GaStep"), "prob").asReal() ) == 1 )
-						return true;
+					var opGInteractionOperandStereotype = opGInteractionOperand.getStereotype("GaStep");
+					var opLInteractionOperandStereotype = opLInteractionOperand.getStereotype("GaStep");
+					if(opGInteractionOperandStereotype.isDefined() and opLInteractionOperandStereotype.isDefined()){
+						if( (opGInteractionOperand.getValue(opGInteractionOperandStereotype, "prob").asReal() + 
+								opLInteractionOperand.getValue(opLInteractionOperandStereotype, "prob").asReal() ) == 1 )
+								return true;
+					}
 				}
 			}
 		}
@@ -135,6 +141,44 @@ operation Component F_numExF(th_maxExF : Integer ) : Boolean{
  *									PERFORMANCE												 *
  *																							 *
  *********************************************************************************************/
+operation Operation F_resDemandGreaterOrEqualThan( th_maxResDemand : List(Real) ) : Boolean{
+	
+	var turnback : Boolean = true;
+	
+	var appliedStereotypes = self.getAppliedStereotypes();
+	
+	var gaStep = self.getStereotype('GaStep');
+	var servCount = self.getValue(gaStep, 'servCount');
+	
+	var i : Integer = 0;
+	
+	for(demand in servCount){
+		if(demand.asReal() < th_maxResDemand.at(i).asReal() ){ //al primo demand non > della soglia relativa ritorna false
+			turnback = false;
+			break;
+		}
+		i = i+1;
+	}
+	
+	return turnback;	
+}
+
+operation Operation F_resDemandLesserThan( th_minResDemand : List(Real) ) : Boolean{
+	var turnback : Boolean = true;
+	var appliedStereotypes = self.getAppliedStereotypes();
+	var gaStep = self.getStereotype('GaStep');
+	var servCount = self.getValue(gaStep, 'servCount');
+	var i : Integer = 0;
+	for(demand in servCount){
+		if(demand.asReal() >= th_minResDemand.at(i) ){ //al primo demand non > della soglia relativa ritorna false
+			turnback = false;
+			break;
+		}
+		i = i+1;
+	}
+	return turnback;	
+}
+
 operation Operation F_resDemand(th_maxResDemand : List(Real)) : Boolean{
 
 	var turnback : Boolean = true;
@@ -215,9 +259,10 @@ operation Component F_resDemand(th_maxOpResDemand : List( Real ), th_minResDeman
 	if(not self.hasStereotype("PaRunTInstance") ) 
 		return false;
 				
-	//modificare per il paper
 	var opGreater = self.getOperationsWithResDemandGreaterOrEqual(th_maxOpResDemand);
-	var opLesser = self.getOperationsWithResDemandLesserThan(th_minResDemand);
+	var opLesser = getOperationWithResDemanLesser(th_minResDemand);
+	
+	opLesser.println();
 	
 	if(not opGreater.isEmpty() and not opLesser.isEmpty()){
 		return true;
@@ -386,8 +431,8 @@ operation Component F_minNetUtil(th_minNetUtil : Real) : Boolean{
 
 //TODO da rivedere
 operation Component F_RT(th_SrtReq : Real) : Boolean {
-	var opGreater = self.getOperationsWithResDemandGreaterOrEqual(th_maxResDemand);
-	var opLesser = self.getOperationsWithResDemandLesserThan(th_minResDemand);
+	var opGreater = self.getOperationsWithResDemandGreaterOrEqual(th_maxResDemand());
+	var opLesser = self.getOperationsWithResDemandLesserThan(th_minResDemand());
 
 	var opG_Messages : Sequence(Message) = new Sequence(Message);
 	var messageList : List(Operation) = new List(Operation);

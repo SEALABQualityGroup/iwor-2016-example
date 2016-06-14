@@ -83,10 +83,9 @@ operation Interaction getUseCase() : UseCase{
 //messaggi in uscita da una lifeline
 operation Interaction getMessageOf(component : Component) : Sequence(Message){
 	var returnValue : Sequence(Message) = new Sequence(Message);
-	var componentLf = self.getComponentLifeline(component);
-	
+	var componentLf = component.getLifeline(self);
 	if(componentLf.isUndefined()){
-		"there was an error!!!".println();
+		" [getMessageOf() in interaction.eol]".errln("There was an error!!!");
 		return null;
 	}
 	
@@ -99,7 +98,7 @@ operation Interaction getMessageOf(component : Component) : Sequence(Message){
 	return returnValue;
 }
 
-operation Interaction getMessageOf(classifier : Classifier) : Sequence(Message){
+/*operation Interaction getMessageOf(classifier : Classifier) : Sequence(Message){
 	var returnValue : Sequence(Message) = new Sequence(Message);
 	var classifierLf = self.getClassifierLifeline(classifier);
 	for (mes in self.getMessages()) { 
@@ -108,7 +107,7 @@ operation Interaction getMessageOf(classifier : Classifier) : Sequence(Message){
 		}
 	}
 	return returnValue;
-}
+}*/
 
 operation Interaction getLifeline(mos : MessageOccurrenceSpecification) : Lifeline{
 	return Lifeline.allInstances->selectOne(lf | lf.namespace == self and 
