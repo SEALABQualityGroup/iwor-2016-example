@@ -89,7 +89,7 @@ wizard CPS{
 }
 wizard ExtensiveProcessingAP{
 	guard :
-		self.isTypeOf(Component) and (self.F_resDemand(th_maxResDemand(), _th_minResDemand()) and self.F_probExec() and (self.F_maxHwUtil(th_maxHwUtil())) or self.F_RT(th_SrtReq()))
+		self.isTypeOf(Component) and (self.F_resDemand(th_maxResDemand(), th_minResDemand()) and self.F_probExec() and (self.F_maxHwUtil(th_maxHwUtil())) or self.F_RT(th_SrtReq()))
 	title : "Move it to a new Component deployed to a new Node"
 	do{
 		self.moveToNewComponentDeployedOnNewNode();
@@ -97,7 +97,7 @@ wizard ExtensiveProcessingAP{
 }
 wizard ExtensiveProcessingAP{
 	guard :
-		self.isTypeOf(Component) and (self.F_resDemand(th_maxResDemand(), _th_minResDemand()) and self.F_probExec() and (self.F_maxHwUtil(th_maxHwUtil())) or self.F_RT(th_SrtReq()))
+		self.isTypeOf(Component) and (self.F_resDemand(th_maxResDemand(), th_minResDemand()) and self.F_probExec() and (self.F_maxHwUtil(th_maxHwUtil())) or self.F_RT(th_SrtReq()))
 	title : "Move it to a new Component deployed to the less used neighbour Node"
 	do{
 		self.moveToNewComponentDeployedOnNearLessUsedNode();
@@ -105,7 +105,7 @@ wizard ExtensiveProcessingAP{
 }
 wizard ExtensiveProcessingAP{
 	guard :
-		self.isTypeOf(Component) and (self.F_resDemand(th_maxResDemand(), _th_minResDemand()) and self.F_probExec() and (self.F_maxHwUtil(th_maxHwUtil())) or self.F_RT(th_SrtReq()))
+		self.isTypeOf(Component) and (self.F_resDemand(th_maxResDemand(), th_minResDemand()) and self.F_probExec() and (self.F_maxHwUtil(th_maxHwUtil())) or self.F_RT(th_SrtReq()))
 	title : "Redeploy its owning Component "+self.name+" to the less used neighbour Node"
 	do{
 		self.redeployOnNearLessUsedNode();
@@ -113,7 +113,7 @@ wizard ExtensiveProcessingAP{
 }
 wizard ExtensiveProcessingAP{
 	guard :
-		self.isTypeOf(Component) and (self.F_resDemand(th_maxResDemand(), _th_minResDemand()) and self.F_probExec() and (self.F_maxHwUtil(th_maxHwUtil())) or self.F_RT(th_SrtReq()))
+		self.isTypeOf(Component) and (self.F_resDemand(th_maxResDemand(), th_minResDemand()) and self.F_probExec() and (self.F_maxHwUtil(th_maxHwUtil())) or self.F_RT(th_SrtReq()))
 	title : "Change its owning Component from "+self.name+" to the one with the lowest demand"
 	do{
 		self.moveToLessCriticalComponent();

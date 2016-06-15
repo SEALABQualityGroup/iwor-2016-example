@@ -26,12 +26,14 @@ operation Message F_probExec() : Boolean{
 operation Operation F_probExec() : Boolean{
 	var listOfMes = self.getAllOwnMessages();
 	var listOfIntOperands = self.getOwnerInteractionOperands();
+	
 	if(not self.hasStereotype("GaStep"))
 		return false;
 	if(listOfMes.isEmpty())
 		return false;
 	if(listOfIntOperands.isEmpty())
 		return true; 
+
 	for(int in listOfIntOperands){
 		if( int.hasStereotype("GaStep") and (int.getValue(int.getStereotype("GaStep"), "prob").asReal() == 1) )
 			return true;
@@ -262,8 +264,6 @@ operation Component F_resDemand(th_maxOpResDemand : List( Real ), th_minResDeman
 	var opGreater = self.getOperationsWithResDemandGreaterOrEqual(th_maxOpResDemand);
 	var opLesser = getOperationWithResDemanLesser(th_minResDemand);
 	
-	opLesser.println();
-	
 	if(not opGreater.isEmpty() and not opLesser.isEmpty()){
 		return true;
 	}
@@ -275,7 +275,7 @@ operation Operation F_T(th_SthReq : Real) : Boolean{
 	var listOfUseCases : List(UseCase) = self.getUseCases(); 
 	var listOfUseCaseWithThroughputLessThanThreshold : List(UseCase) = new List(UseCase);
 	if(listOfUseCases.isEmpty()){
-		return false; //non ci sono use case legati all'operazione
+		return false; 
 	}
 	for(useCase in listOfUseCases){
 		if(useCase.hasStereotype('GaScenario')){

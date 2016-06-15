@@ -90,7 +90,7 @@ pattern CPS
 pattern ExtensiveProcessingAP
 	mainRole : Component { 
 		match : 
-			(mainRole.F_resDemand(th_maxResDemand(), _th_minResDemand()) and mainRole.F_probExec() and (mainRole.F_maxHwUtil(th_maxHwUtil())) or mainRole.F_RT(th_SrtReq()))
+			(mainRole.F_resDemand(th_maxResDemand(), th_minResDemand()) and mainRole.F_probExec() and (mainRole.F_maxHwUtil(th_maxHwUtil())) or mainRole.F_RT(th_SrtReq()))
 		onmatch {
 		mainRole.moveToNewComponentDeployedOnNewNode();
 	}
@@ -98,7 +98,7 @@ pattern ExtensiveProcessingAP
 pattern ExtensiveProcessingAP
 	mainRole : Component { 
 		match : 
-			(mainRole.F_resDemand(th_maxResDemand(), _th_minResDemand()) and mainRole.F_probExec() and (mainRole.F_maxHwUtil(th_maxHwUtil())) or mainRole.F_RT(th_SrtReq()))
+			(mainRole.F_resDemand(th_maxResDemand(), th_minResDemand()) and mainRole.F_probExec() and (mainRole.F_maxHwUtil(th_maxHwUtil())) or mainRole.F_RT(th_SrtReq()))
 		onmatch {
 		mainRole.moveToNewComponentDeployedOnNearLessUsedNode();
 	}
@@ -106,7 +106,7 @@ pattern ExtensiveProcessingAP
 pattern ExtensiveProcessingAP
 	mainRole : Component { 
 		match : 
-			(mainRole.F_resDemand(th_maxResDemand(), _th_minResDemand()) and mainRole.F_probExec() and (mainRole.F_maxHwUtil(th_maxHwUtil())) or mainRole.F_RT(th_SrtReq()))
+			(mainRole.F_resDemand(th_maxResDemand(), th_minResDemand()) and mainRole.F_probExec() and (mainRole.F_maxHwUtil(th_maxHwUtil())) or mainRole.F_RT(th_SrtReq()))
 		onmatch {
 		mainRole.redeployOnNearLessUsedNode();
 	}
@@ -114,7 +114,7 @@ pattern ExtensiveProcessingAP
 pattern ExtensiveProcessingAP
 	mainRole : Component { 
 		match : 
-			(mainRole.F_resDemand(th_maxResDemand(), _th_minResDemand()) and mainRole.F_probExec() and (mainRole.F_maxHwUtil(th_maxHwUtil())) or mainRole.F_RT(th_SrtReq()))
+			(mainRole.F_resDemand(th_maxResDemand(), th_minResDemand()) and mainRole.F_probExec() and (mainRole.F_maxHwUtil(th_maxHwUtil())) or mainRole.F_RT(th_SrtReq()))
 		onmatch {
 		mainRole.moveToLessCriticalComponent();
 	}

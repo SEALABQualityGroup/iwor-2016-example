@@ -561,7 +561,6 @@ operation Operation moveToLessCriticalComponent() : Boolean{
 	}
 	
 	if(lessUsedComponent <> self.class){
-		lessUsedComponent.println();
 		self.moveIntoComponent(lessUsedComponent);
 	}
 	
@@ -618,10 +617,6 @@ operation Operation moveToLessCriticalClass() : Boolean{
 	var besL2 : BehaviorExecutionSpecification = new BehaviorExecutionSpecification;
 	interaction.addFragmentAt(besL2,indexOfMesMOS_R+1);
 	
-	message.getReceiveEvent().println();
-	
-	message.getReceiveEvent().println();
-	sourceLifeline.println();
 	var sourceBES = sourceLifeline.getBESStartedBy(message.getReceiveEvent());
 	besL2.start = self.getMessageIn(interaction).getReceiveEvent();
 	besL2.finish = sourceBES.getFinish();

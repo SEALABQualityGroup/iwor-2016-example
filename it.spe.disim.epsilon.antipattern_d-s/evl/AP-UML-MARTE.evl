@@ -202,7 +202,7 @@ context Node {
  context Component {
  	critique ExtensiveProcessingAP{
  		check:
- 			not (self.F_resDemand(th_maxResDemand(), th_minResDemand()).println() and 
+ 			not (self.F_resDemand(th_maxResDemand(), th_minResDemand()) and 
  					self.F_probExec() and 
  						( self.F_maxHwUtil(th_maxHwUtil())) or self.F_RT(th_SrtReq()) )
  		message : "EP <" + self.type.name + "> " + self.name

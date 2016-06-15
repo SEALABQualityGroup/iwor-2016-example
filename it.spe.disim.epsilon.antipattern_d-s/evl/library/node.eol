@@ -180,7 +180,7 @@ operation Node getNeighboursWithLowUtilization() : Sequence(Node){
 	
 	var lanNode = self.getLinkedNetworkNode()->first();
 	if(lanNode.isUndefined()){
-		"there was an error!!".println();
+		" [getNeighboursWithLowUtilization in node.eol]".errln("there was an error!!!");
 		return null;
 	}
 	var comPaths = lanNode.getCommunicationPaths();
