@@ -273,24 +273,23 @@ operation Component getArtifactOn(node : Node) : Artifact{
 operation Component calculateUtilization() : Sequence(Real){
 	var ownOperations = self.getOperations();
 	var utilization : Sequence(Real) = new Sequence(Real);
-	var computationUtilization : Real = 0.0;
-	var storageUtilization : Real = 0.0;
-	var bandwidthUtilization : Real = 0.0;
-
+	
 	for(op in ownOperations){
 		if(op.hasStereotype("GaStep") and op.getValue(op.getStereotype("GaStep"), "servCount").isDefined()){
 			var sCount = op.getValue(op.getStereotype("GaStep"), "servCount");
+			for(sc in sCount){
+				utilization.add(0.0);
+			}
 			if(not sCount.isEmpty()){
-				computationUtilization = computationUtilization + sCount.at(0).asReal(); //computation
-				storageUtilization = storageUtilization + sCount.at(1).asReal(); //storage
-				bandwidthUtilization = bandwidthUtilization + sCount.at(2).asReal(); //bandwidth
+				var i : Integer = 0;
+				for(sc in sCount){
+					utilization.add(utilization.at(i).asReal() + sCount.at(i).asReal());
+					utilization.removeAt(i);
+					i = i+1;
+				}
 			}
 		}
 	}
-	utilization.add(0,computationUtilization);
-	utilization.add(1,storageUtilization);
-	utilization.add(2,bandwidthUtilization);
-	
 	return utilization;
 }
 

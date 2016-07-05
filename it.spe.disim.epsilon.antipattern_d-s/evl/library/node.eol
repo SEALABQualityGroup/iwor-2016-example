@@ -250,7 +250,11 @@ operation Node getCriticalDeployedComponent() : Component{
 	var criticalComponent : Component;
 	var utilization : Real;
 	for(art in artifacts){
+		art.println();
 		var components = art.getManifestedComponents();
+		if(components.isUndefined() or components.isEmpty()){
+			"[getCriticalDeployedComponent() in node.eol]".errln("There was an error!!! ");
+		}
 		utilization = components->first().calculateTotalUtilization().asReal();
 		criticalComponent = components->first();
 		for(comp in components){

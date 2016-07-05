@@ -17,10 +17,19 @@ operation Artifact getDeploymentNode() : Node{
 }
 
 operation Artifact getManifestedComponents() : Sequence(Component){
-	self.getManifestations()->select(man : Manifestation | man.getUtilizedElement().isTypeOf(Component) );
+	var manifestations = self.getManifestations();
+	var returnValue : Sequence(Component);
+	for(man in manifestations){
+		if( man.getUtilizedElement().isTypeOf(Component) ){
+			man.getUtilizedElement().println();
+			returnValue.add(man.getUtilizedElement());
+		}
+	}
+	return returnValue;
+	//self.getManifestations()->select(c : Component | this.getUtilizedElement().isTypeOf(Component) ).println();
 }
 
 
 operation Artifact getManifestedClassifier() : Sequence(Classifier){
-	self.getManifestations()->select(man : Manifestation | man.getUtilizedElement().isTypeOf(Classifier) );
+	return self.getManifestations()->select(man : Manifestation | man.getUtilizedElement().isTypeOf(Classifier) );
 }

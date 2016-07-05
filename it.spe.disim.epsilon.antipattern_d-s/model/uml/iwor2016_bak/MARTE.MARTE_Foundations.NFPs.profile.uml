@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_U_GAoAPMEdyuUt-4qHuVvQ" name="NFPs" URI="" metamodelReference="_U_GAoAPMEdyuUt-4qHuVvQ_packageImportcreatedOnLoad">
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_U_GAoAPMEdyuUt-4qHuVvQ" name="NFPs" URI="" metamodelReference="_U_GAoAPMEdyuUt-4qHuVvQ_packageImportcreatedOnLoad">
   <eAnnotations xmi:id="_zq3i_DIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML">
     <contents xmi:type="ecore:EPackage" xmi:id="_zq3i_TIsEeagfJvsBaC-YA" name="NFPs" nsURI="http:///schemas/NFPs/_zH1qoDIsEeagfJvsBaC-YA/0" nsPrefix="NFPs">
       <eAnnotations xmi:id="_zq3i_jIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/4.0.0/UML">
@@ -9,7 +9,7 @@
         <eAnnotations xmi:id="_zq3jADIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_P9c2AA4wEdysTsAUPnp57Q"/>
         <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zq3jATIsEeagfJvsBaC-YA" name="kind" ordered="false" unique="false" eType="_zq3jBzIsEeagfJvsBaC-YA" defaultValueLiteral=""/>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq3jAzIsEeagfJvsBaC-YA" name="base_Constraint" ordered="false" unique="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Constraint"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Constraint"/>
         </eStructuralFeatures>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq3jBTIsEeagfJvsBaC-YA" name="mode" ordered="false" unique="false" upperBound="-1" eType="_zq3jDDIsEeagfJvsBaC-YA"/>
       </eClassifiers>
@@ -24,19 +24,19 @@
           <references xmi:type="uml:Stereotype" href="MARTE.MARTE_Foundations.CoreElements.profile.uml#_yeqiEECMEd6UTJZnztgOLw"/>
         </eAnnotations>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq3jDjIsEeagfJvsBaC-YA" name="base_State" ordered="false" unique="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//State"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//State"/>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_zq3jEDIsEeagfJvsBaC-YA" name="NfpType" eSuperTypes="_zq3jGTIsEeagfJvsBaC-YA">
         <eAnnotations xmi:id="_zq3jETIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_-Z87EBFFEdyBd9q9NMDXUQ"/>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq3jEjIsEeagfJvsBaC-YA" name="valueAttrib" ordered="false" unique="false">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
         </eStructuralFeatures>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq3jFDIsEeagfJvsBaC-YA" name="unitAttrib" ordered="false" unique="false">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
         </eStructuralFeatures>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq3jFjIsEeagfJvsBaC-YA" name="exprAttrib" ordered="false" unique="false">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_zq3jGTIsEeagfJvsBaC-YA" name="DataTypes_TupleType">
@@ -44,23 +44,23 @@
           <references xmi:type="uml:Stereotype" href="MARTE.MARTE_Annexes.VSL.DataTypes.profile.uml#_IkLw0A-NEdyLh7muGbCqMw"/>
         </eAnnotations>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq3jGzIsEeagfJvsBaC-YA" name="tupleAttrib" ordered="false" unique="false" upperBound="-1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
         </eStructuralFeatures>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq3jHTIsEeagfJvsBaC-YA" name="base_DataType" ordered="false" unique="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//DataType"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DataType"/>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_zq4GQDIsEeagfJvsBaC-YA" name="Dimension">
         <eAnnotations xmi:id="_zq4GQTIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_gX6fcECJEd6UTJZnztgOLw"/>
         <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zq4GQjIsEeagfJvsBaC-YA" name="symbol" ordered="false" unique="false" defaultValueLiteral="">
-          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
         </eStructuralFeatures>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq4GRDIsEeagfJvsBaC-YA" name="baseDimension" unique="false" upperBound="-1" eType="_zq4GQDIsEeagfJvsBaC-YA"/>
         <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zq4GRjIsEeagfJvsBaC-YA" name="baseExponent" unique="false" upperBound="-1" defaultValueLiteral="">
-          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//Integer"/>
+          <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//Integer"/>
         </eStructuralFeatures>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq4GSDIsEeagfJvsBaC-YA" name="base_Enumeration" ordered="false" unique="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Enumeration"/>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_zq4GSjIsEeagfJvsBaC-YA" name="Unit">
@@ -69,7 +69,7 @@
         <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zq4GTjIsEeagfJvsBaC-YA" name="offsetFactor" ordered="false" unique="false" eType="_zq4GVDIsEeagfJvsBaC-YA" defaultValueLiteral=""/>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq4GUDIsEeagfJvsBaC-YA" name="baseUnit" ordered="false" unique="false" eType="_zq4GSjIsEeagfJvsBaC-YA"/>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq4GUjIsEeagfJvsBaC-YA" name="base_EnumerationLiteral" ordered="false" unique="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//EnumerationLiteral"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//EnumerationLiteral"/>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xmi:type="ecore:EDataType" xmi:id="_zq4GVDIsEeagfJvsBaC-YA" name="IWoR2016_ase_MARTE_Library_MARTE_PrimitivesTypes_Real" instanceClassName="java.lang.String">
@@ -80,7 +80,7 @@
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_zq4GVjIsEeagfJvsBaC-YA" name="Nfp">
         <eAnnotations xmi:id="_zq4GVzIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_lCt1AA4vEdysTsAUPnp57Q"/>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq4GWDIsEeagfJvsBaC-YA" name="base_Property" ordered="false" unique="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Property"/>
         </eStructuralFeatures>
       </eClassifiers>
     </contents>

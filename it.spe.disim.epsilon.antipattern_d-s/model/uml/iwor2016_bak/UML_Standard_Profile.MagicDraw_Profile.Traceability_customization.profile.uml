@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DSLCustomization="http:///schemas/DSLCustomization/_zH_boDIsEeagfJvsBaC-YA/0" xmlns:MagicDrawProfile="http://www.omg.org/spec/UML/20131001/MagicDrawProfile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/DSLCustomization/_zH_boDIsEeagfJvsBaC-YA/0 UML_Standard_Profile.MagicDraw_Profile.DSL_Customization.profile.uml#_zqrTgzIsEeagfJvsBaC-YA http://www.omg.org/spec/UML/20131001/MagicDrawProfile UML_Standard_Profile.MagicDraw_Profile.profile.uml#_zqtuMjIsEeagfJvsBaC-YA">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DSLCustomization="http:///schemas/DSLCustomization/_zH_boDIsEeagfJvsBaC-YA/0" xmlns:MagicDrawProfile="http://www.omg.org/spec/UML/20131001/MagicDrawProfile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/DSLCustomization/_zH_boDIsEeagfJvsBaC-YA/0 UML_Standard_Profile.MagicDraw_Profile.DSL_Customization.profile.uml#_zqrTgzIsEeagfJvsBaC-YA http://www.omg.org/spec/UML/20131001/MagicDrawProfile UML_Standard_Profile.MagicDraw_Profile.profile.uml#_zqtuMjIsEeagfJvsBaC-YA">
   <uml:Profile xmi:id="_16_6_8f90291_1254846042821_86742_517" name="Traceability customization" URI="" metamodelReference="_16_8beta_8f90291_1257514702156_396350_406">
     <eAnnotations xmi:id="_zqsgUjIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <contents xmi:type="ecore:EPackage" xmi:id="_zqsgUzIsEeagfJvsBaC-YA" name="Traceabilitycustomization" nsURI="http:///schemas/Traceabilitycustomization/_zGm7kDIsEeagfJvsBaC-YA/0" nsPrefix="Traceabilitycustomization">
@@ -10,63 +10,63 @@
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgWDIsEeagfJvsBaC-YA" name="ParticipatesInInteractions">
               <eAnnotations xmi:id="_zqsgWTIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257526379630_900586_653"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgWjIsEeagfJvsBaC-YA" name="participatesInInteraction" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interaction"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Interaction"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgXDIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgXTIsEeagfJvsBaC-YA" name="ParticipatesInActivities">
               <eAnnotations xmi:id="_zqsgXjIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257598514420_8124_735"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgXzIsEeagfJvsBaC-YA" name="participatesInActivity" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Activity"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Activity"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgYTIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgYjIsEeagfJvsBaC-YA" name="UsedClassifiersInInteractions">
               <eAnnotations xmi:id="_zqsgYzIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1260099600550_889307_1515"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgZDIsEeagfJvsBaC-YA" name="usedClassifier" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgZjIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgZzIsEeagfJvsBaC-YA" name="DescribedUseCases">
               <eAnnotations xmi:id="_zqsgaDIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_6_321204c2_1257343769595_567901_526"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgaTIsEeagfJvsBaC-YA" name="describedUseCase" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgazIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgbDIsEeagfJvsBaC-YA" name="DescribingBehaviors">
               <eAnnotations xmi:id="_zqsgbTIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_6_321204c2_1257342406156_172304_345"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgbjIsEeagfJvsBaC-YA" name="describingBehavior" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgcDIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgcTIsEeagfJvsBaC-YA" name="SpecificClassifiers">
               <eAnnotations xmi:id="_zqsgcjIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257603728786_427344_1057"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgczIsEeagfJvsBaC-YA" name="specificClassifier" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgdTIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgdjIsEeagfJvsBaC-YA" name="AllSpecificClassifiers">
               <eAnnotations xmi:id="_zqsgdzIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257776077493_894734_1346"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgeDIsEeagfJvsBaC-YA" name="allSpecificClassifiers" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgejIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgezIsEeagfJvsBaC-YA" name="AllGeneralClassifiers">
               <eAnnotations xmi:id="_zqsgfDIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257777133904_244038_1385"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgfTIsEeagfJvsBaC-YA" name="allGeneralClassifiers" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgfzIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsggDIsEeagfJvsBaC-YA" name="UsedClassifiersInActivities">
               <eAnnotations xmi:id="_zqsggTIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1260099600534_896002_1514"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsggjIsEeagfJvsBaC-YA" name="usedClassifier" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsghDIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
@@ -80,49 +80,49 @@
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgijIsEeagfJvsBaC-YA" name="UseCaseSpecifyingUseCases">
               <eAnnotations xmi:id="_zqsgizIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257601240848_568501_848"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgjDIsEeagfJvsBaC-YA" name="specifyingUseCase" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//UseCase"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//UseCase"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgjjIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgjzIsEeagfJvsBaC-YA" name="ComponentSpecifyingClasses">
               <eAnnotations xmi:id="_zqsgkDIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257603302247_321027_1020"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgkTIsEeagfJvsBaC-YA" name="specifyingClass" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgkzIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsglDIsEeagfJvsBaC-YA" name="ArtifactManifestingClassifiers">
               <eAnnotations xmi:id="_zqsglTIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257601888548_369888_952"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgljIsEeagfJvsBaC-YA" name="manifestedInArtifact" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgmDIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgmTIsEeagfJvsBaC-YA" name="ClassSpecifyingUseCases">
               <eAnnotations xmi:id="_zqsgmjIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257524801725_734919_435"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgmzIsEeagfJvsBaC-YA" name="specifyingUseCase" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//UseCase"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//UseCase"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgnTIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgnjIsEeagfJvsBaC-YA" name="ElementSpecifyingElements">
               <eAnnotations xmi:id="_zqsgnzIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257607854444_668462_1347"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgoDIsEeagfJvsBaC-YA" name="specifyingElement" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgojIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgozIsEeagfJvsBaC-YA" name="ElementAllSpecifyingElements">
               <eAnnotations xmi:id="_zqsgpDIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257608351672_157007_1423"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgpTIsEeagfJvsBaC-YA" name="allSpecifyingElements" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgpzIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgqDIsEeagfJvsBaC-YA" name="ClassifierSpecifyingComponents">
               <eAnnotations xmi:id="_zqsgqTIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_17_0_8f90291_1289574801458_887515_1485"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgqjIsEeagfJvsBaC-YA" name="specifyingComponent" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Component"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Component"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgrDIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
@@ -132,56 +132,56 @@
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgrzIsEeagfJvsBaC-YA" name="ElementRealizingElements">
               <eAnnotations xmi:id="_zqsgsDIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257606652436_53189_1301"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgsTIsEeagfJvsBaC-YA" name="realizingElement" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgszIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgtDIsEeagfJvsBaC-YA" name="ElementAllRealizingElements">
               <eAnnotations xmi:id="_zqsgtTIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257609276643_799601_1464"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgtjIsEeagfJvsBaC-YA" name="allRealizingElements" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsguDIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsguTIsEeagfJvsBaC-YA" name="UseCaseRealizingUseCases">
               <eAnnotations xmi:id="_zqsgujIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257601435805_285564_884"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsguzIsEeagfJvsBaC-YA" name="realizingUseCase" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//UseCase"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//UseCase"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgvTIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgvjIsEeagfJvsBaC-YA" name="ComponentRealizingClassifiers">
               <eAnnotations xmi:id="_zqsgvzIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257604728446_635239_1123"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgwDIsEeagfJvsBaC-YA" name="realizingClassifier" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgwjIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgwzIsEeagfJvsBaC-YA" name="ComponentManifestedbyArtifacts">
               <eAnnotations xmi:id="_zqsgxDIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257601884641_372155_918"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgxTIsEeagfJvsBaC-YA" name="manifestedByArtifact" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Artifact"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Artifact"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgxzIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgyDIsEeagfJvsBaC-YA" name="InterfaceRealizingClassifiers">
               <eAnnotations xmi:id="_zqsgyTIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257606113035_237110_1195"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgyjIsEeagfJvsBaC-YA" name="realizingClassifier" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsgzDIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsgzTIsEeagfJvsBaC-YA" name="ClassRealizingComponents">
               <eAnnotations xmi:id="_zqsgzjIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257603299340_938717_986"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsgzzIsEeagfJvsBaC-YA" name="realizingComponent" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Component"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Component"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsg0TIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>
             <eClassifiers xmi:type="ecore:EClass" xmi:id="_zqsg0jIsEeagfJvsBaC-YA" name="UseCaseRealizingClasses">
               <eAnnotations xmi:id="_zqsg0zIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_16_8beta_8f90291_1257524801725_389368_434"/>
               <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zqsg1DIsEeagfJvsBaC-YA" name="realizingClass" upperBound="-1">
-                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+                <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
               </eStructuralFeatures>
               <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_zqsg1jIsEeagfJvsBaC-YA" name="Traceability" ordered="false" lowerBound="1"/>
             </eClassifiers>

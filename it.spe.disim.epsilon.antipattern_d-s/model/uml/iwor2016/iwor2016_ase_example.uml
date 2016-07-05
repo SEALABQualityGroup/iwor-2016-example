@@ -2315,7 +2315,7 @@ Profile also includes validation suites for UML model correctness and completene
   <GQAM:GaStep xmi:id="_zs3DQDIsEeagfJvsBaC-YA" base_NamedElement="_18_0_4_28c0145_1464784429014_624547_6936" prob="0.3"/>
   <GQAM:GaStep xmi:id="_zs3DQTIsEeagfJvsBaC-YA" base_NamedElement="_18_0_4_28c0145_1464942653332_18055_6181"/>
   <GQAM:GaStep xmi:id="_zs3qUDIsEeagfJvsBaC-YA" base_NamedElement="_18_0_4_28c0145_1464784371508_166011_6904" servDemand="_zszY4DIsEeagfJvsBaC-YA">
-    <servCount>25.0</servCount>
+    <servCount>23.0</servCount>
   </GQAM:GaStep>
   <GQAM:GaStep xmi:id="_zs4RYDIsEeagfJvsBaC-YA" base_NamedElement="_18_0_4_28c0145_1464784163817_724757_6724" servDemand="_zszY4DIsEeagfJvsBaC-YA">
     <servCount>23.0</servCount>

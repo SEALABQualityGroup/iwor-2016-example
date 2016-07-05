@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_-wEewECLEd6UTJZnztgOLw" name="CoreElements" URI="" metamodelReference="_-wEewECLEd6UTJZnztgOLw_packageImportcreatedOnLoad">
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_-wEewECLEd6UTJZnztgOLw" name="CoreElements" URI="" metamodelReference="_-wEewECLEd6UTJZnztgOLw_packageImportcreatedOnLoad">
   <eAnnotations xmi:id="_zq1skTIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML">
     <contents xmi:type="ecore:EPackage" xmi:id="_zq1skjIsEeagfJvsBaC-YA" name="CoreElements" nsURI="http:///schemas/CoreElements/_zI6osDIsEeagfJvsBaC-YA/0" nsPrefix="CoreElements">
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_zq1skzIsEeagfJvsBaC-YA" name="ModeBehavior">
         <eAnnotations xmi:id="_zq1slDIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_8DKXIECMEd6UTJZnztgOLw"/>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq1slTIsEeagfJvsBaC-YA" name="base_StateMachine" ordered="false" unique="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//StateMachine"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//StateMachine"/>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_zq1slzIsEeagfJvsBaC-YA" name="ModeTransition">
         <eAnnotations xmi:id="_zq1smDIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_2-EsoECMEd6UTJZnztgOLw"/>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq1smTIsEeagfJvsBaC-YA" name="base_Transition" ordered="false" unique="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Transition"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Transition"/>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_zq1smzIsEeagfJvsBaC-YA" name="Mode">
         <eAnnotations xmi:id="_zq1snDIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_yeqiEECMEd6UTJZnztgOLw"/>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq1snTIsEeagfJvsBaC-YA" name="base_State" ordered="false" unique="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//State"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//State"/>
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xmi:type="ecore:EClass" xmi:id="_zq1snzIsEeagfJvsBaC-YA" name="Configuration">
         <eAnnotations xmi:id="_zq1soDIsEeagfJvsBaC-YA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_H0HcsECNEd6UTJZnztgOLw"/>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq1soTIsEeagfJvsBaC-YA" name="base_StructuredClassifier" ordered="false" unique="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//StructuredClassifier"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//StructuredClassifier"/>
         </eStructuralFeatures>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq1sozIsEeagfJvsBaC-YA" name="base_Package" ordered="false" unique="false" lowerBound="1">
-          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
         </eStructuralFeatures>
         <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_zq1spTIsEeagfJvsBaC-YA" name="mode" ordered="false" unique="false" upperBound="-1" eType="_zq1smzIsEeagfJvsBaC-YA"/>
       </eClassifiers>
