@@ -247,23 +247,30 @@ operation Node hasLowUtilization() : Boolean {
 
 operation Node getCriticalDeployedComponent() : Component{
 	var artifacts = self.getArtifact();
-	var criticalComponent : Component;
+	var criticalComponent : List(Component);
 	var utilization : Real;
+	
 	for(art in artifacts){
 		var components = art.getManifestedComponents();
 		if(components.isUndefined() or components.isEmpty()){
 			"[getCriticalDeployedComponent() in node.eol]".errln("There was an error!!! ");
 		}
-		utilization = components->first().calculateTotalUtilization().asReal();
-		criticalComponent = components->first();
+		if( components->first().calculateTotalUtilization().asString() <> "NaN"){
+			utilization = components->first().calculateTotalUtilization().asReal();
+			criticalComponent.add(components->first());
+		}else{
+			utilization == 0.0;
+		}
 		for(comp in components){
-			if(utilization < comp.calculateTotalUtilization().asReal()){
-				utilization = comp.calculateTotalUtilization();
-				criticalComponent = comp;
+			if(comp.calculateTotalUtilization().asString() <> "NaN"){
+				if(utilization < comp.calculateTotalUtilization().asReal()){
+					utilization = comp.calculateTotalUtilization();
+					criticalComponent.add(comp);
+				}
 			}
 		}
 	}	
-	return criticalComponent;
+	return criticalComponent.sortBy(c : Component | c.calculateTotalUtilization())->last();
 }
 
 operation Node calculateTotalUtilization() : Real{
@@ -332,3 +339,4 @@ operation Node redeployOnNearLessUsedNode() {
 operation Node moveToLessCriticalComponent(){
 	self.getCriticalDeployedComponent().getCriticalOperation().redeployOnNearLessUsedNode();
 }
+

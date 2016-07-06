@@ -21,7 +21,6 @@ operation Artifact getManifestedComponents() : Sequence(Component){
 	var returnValue : Sequence(Component);
 	for(man in manifestations){
 		if( man.getUtilizedElement().isTypeOf(Component) ){
-			man.getUtilizedElement().println();
 			returnValue.add(man.getUtilizedElement());
 		}
 	}

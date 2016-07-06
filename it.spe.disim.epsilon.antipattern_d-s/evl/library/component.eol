@@ -329,10 +329,16 @@ operation Component createLifelineInto(interaction : Interaction) : Lifeline {
 	return lifeline;
 }
 
-operation Component getCriticalOperation(){
+operation Component getCriticalOperation() : Operation{
+
 	var operations = self.getOwnedOperations();
 	var criticalOperation : Operation;
 	var utilization : Real;
+	
+	if(operations.isUndefined() or operations.isEmpty()){
+		"[getCriticalOperations() in operation.eol]".errln("There was an error!!! ");
+		return false;
+	}
 	
 	criticalOperation = operations->first();
 	utilization = criticalOperation.calculateTotalUtilization();
@@ -770,10 +776,10 @@ operation Component moveToNewComponentDeployedOnNearLessUsedNode(){
 	self.getCriticalOperation().moveToNewComponentDeployedOnNearLessUsedNode();
 }
 
-operation Node redeployOnNearLessUsedNode() {
+operation Component redeployOnNearLessUsedNode() {
 	self.getCriticalOperation().redeployOnNearLessUsedNode();
 }
 
-operation Node moveToLessCriticalComponent(){
+operation Component moveToLessCriticalComponent(){
 	self.getCriticalOperation().redeployOnNearLessUsedNode();
 }

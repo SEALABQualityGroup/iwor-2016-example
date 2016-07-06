@@ -187,7 +187,7 @@ operation Operation moveIntoClass(class : Class){
 
 operation Operation _redeployOnNearLessUsedNode() : Boolean{
 
-	var listOfCriticSourceNode = self.getDeployedNodesHwUtilization(th_maxHwUtil); 
+	var listOfCriticSourceNode = self.getDeployedNodesHwUtilization(th_maxHwUtil()); 
 	var listOfNearLessUsed : List(Node) = new List(Node);
 	
 	for(node in listOfCriticSourceNode){
@@ -481,6 +481,24 @@ operation Operation moveToNewClassDeployedOnNearLessUsedNode() : Boolean {
 	return true;
 }
 
+
+operation Operation getCriticSourceNode() : List(Node){
+
+	var selfNodes = self.getProcessNodes();
+	var returnValue : List(Node);
+	
+	for(node in selfNodes){
+		if(node.F_maxHwUtil(th_maxHwUtil())){
+			returnValue.add(node);
+		}
+	}
+	if(returnValue.isUndefined() or returnValue.isEmpty()){
+		return false;
+	}else{
+		return returnValue;
+	}
+}
+
 operation Operation moveToNewComponentDeployedOnNearLessUsedNode() : Boolean {
 	//static
 	var sourceComponent : Component = self.class;
@@ -490,7 +508,7 @@ operation Operation moveToNewComponentDeployedOnNearLessUsedNode() : Boolean {
 	var listOfNearLessUsedNode = sourceComponent.getNearLessUsedNodes();
 	
 	//lista dei nodi critici che manifestano il componente con l'op critica
-	var listOfCriticSourceNode = self.PaF_F_maxHwUtil(); 
+	var listOfCriticSourceNode = self.getCriticSourceNode(); 
 	var listOfNearLessUsed : List(Node) = new List(Node);
 		
 	splittedComponent.moveOperation(self);
@@ -688,7 +706,7 @@ operation Operation decomposition(){
 			
 			var ownerLifeline = owner.getLifeline(interaction);
 			if(ownerLifeline.isUndefined()){
-				"there was an error!!!".println();
+				"[decomposition() in operation.eol]".errln("there was an error!!!" );
 				return 0;
 			}
 			ownerLifeline.getCoveredBys().add(sendEvent);			
@@ -729,26 +747,3 @@ operation getOperationWithResDemanLesser(th_minResDemand : List(Real)) : List(Op
 		return opLesser;
 	}
 }
-
-/****************************************************
- * 				OLD OPERATION						*
- ****************************************************
- 
-operation Operation splitting(numberOfSplitting : Integer, percentage : Integer) : Boolean{
-	var turnback : Boolean = false;
-	
-	var message = "fai la scelta: 0- splitto il componente con l'operazione critica; 1- splitto l'operazione critica";
-	var caseValue = UserInput.promptInteger(message, 0);
-	
-	switch (caseValue) {
-		case "1" : 
-			turnback = self.splittingOperation(numberOfSplitting, percentage);
-		case "2" : "2".println();
-		case "3" : "3".println(); 
-		default:
-			turnback = self.splittingComponent(numberOfSplitting, percentage);
-	}
-	
-	return turnback;
-}
-*/
